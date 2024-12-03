@@ -12,6 +12,11 @@
     margin-left: 5%;
 }
 
+.card-header{
+    background-color: rgb(64, 22, 106);
+    color: white;
+}
+
 #fondo{
     background-image: url("/assets/fondotourastronomico.jpg");
     background-size: cover;

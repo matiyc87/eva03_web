@@ -2,9 +2,10 @@
     background-color: rgb(58, 42, 151);
 }
 
-.navbar #links{
+.navbar #enlaces{
     display: flex;
     justify-content: center; 
+
 }
 
 .navbar a{
