@@ -1,0 +1,21 @@
+.navbar{
+    background-color: rgb(64, 22, 106);
+}
+
+.navbar #links{
+    display: flex;
+    justify-content: center; 
+}
+
+.navbar a{
+    color: white;
+    margin-left: 5%;
+}
+
+#fondo{
+    background-image: url("/assets/fondotourastronomico.jpg");
+    background-size: cover;
+    background-position: center;
+    min-height: 95vh;
+    color: white;
+}

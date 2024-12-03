@@ -1,0 +1,100 @@
+.navbar{
+    background-color: rgb(58, 42, 151);
+}
+
+.navbar #links{
+    display: flex;
+    justify-content: center; 
+}
+
+.navbar a{
+    color: white;
+    margin-left: 3%;
+}
+
+.navbar button{
+    padding: 0.5%;
+    padding-left: 1.5%;
+    padding-right: 1.5%;
+    font-size: 1.3rem;
+    font-weight: bold;
+    border-radius: 40px;
+}
+
+#fondo{
+    background-image: url("/assets/fondotourastronomico.jpg");
+    background-size: cover;
+    background-position: center;
+    min-height: 95vh;
+}
+
+#main{
+    padding-top: 10%;
+    padding-bottom: 10%;
+    display: flex;
+    justify-content: center; 
+}
+
+#main h1{
+    color: white;
+    font-size: 4rem;
+}
+
+#mainbutton{
+    margin-top: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#mainbutton button{
+    padding: 2%;
+    font-size: 1.4rem;
+    font-weight: bold;
+    border-radius: 40px;
+}
+
+#info{
+    margin: 0%;
+    padding: 5%;
+    color: white;
+}
+
+#info h1{
+    font-size: 3rem;
+}
+
+#info p{
+    font-size: 1.3rem;
+}
+
+#tours{
+    margin-top: 15%;
+    margin-bottom: 10%;
+}
+
+#tours img{
+    width: 105%;
+    height: 105%;
+    padding-bottom: 10%;
+}
+
+#tours h2{
+    font-size: 1.7rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#foot h5{
+    color: white;
+    font-size: 1.3rem;
+}
+
+#foot h6{
+    padding-top: 2%;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

@@ -1,0 +1,134 @@
+<nav class="navbar navbar-expand-lg">
+  <div class="container-fluid">
+    <img src="/assets/boton_logo.png" alt="Logo" width="150">
+    <div id="links" class="container-fluid">
+      <a class="navbar-brand p-3" href="#">Home</a>
+      <a class="navbar-brand p-3" href="#">Tours</a>
+      <a class="navbar-brand p-3" href="#">Contacto</a>
+    </div>
+  </div>
+</nav>
+
+<div id="fondo" class="container-fluid">
+  <div class="container">
+    <div class="row text-center text-white p-5">
+      <h1>Sistema de Reservas</h1>
+    </div>
+    <div class="row">
+      <div class="col-4">
+        <div class="card">
+          <div class="card-header bg-success">
+            Nuevo Producto
+          </div>
+
+          <div class="card-body">
+            <form [formGroup]="productForm">
+              <div class="col-12">
+                <label for=""></label>
+                <input type="text" class="form-control" [hidden]="true" formControlName="id" placeholder="Ingrese el ID"> 
+              </div>
+
+              <div class="col-12">
+                <label for="">Nombre</label>
+                <input type="text" class="form-control" formControlName="Nombre">
+                <div class="text-danger">
+                  @if (productForm.controls['Nombre'].touched)
+                  {
+                    @if (productForm.controls['Nombre'].errors?.['required']) 
+                    {
+                      <span>No puede dejar el nombre vacio</span>
+                    }
+                  }
+                </div>
+              </div>
+
+              <div class="col-12">
+                <label for="">Tipo de Tour</label>
+                <input type="text" class="form-control" formControlName="Tour">
+                <div class="text-danger">
+                  @if (productForm.controls['Tour'].touched)
+                  {
+                    @if (productForm.controls['Tour'].errors?.['required']) 
+                    {
+                      <span>Debes elegir un tour</span>
+                    }
+                  }
+                </div>
+              </div>
+
+              <div class="col-12">
+                <label for="">Fecha del agendamiento</label>
+                <input type="text" class="form-control" formControlName="Fecha">
+                <div class="text-danger">
+                  @if (productForm.controls['Fecha'].touched)
+                  {
+                    @if (productForm.controls['Fecha'].errors?.['required']) 
+                    {
+                      <span>Debes agregar una fecha</span>
+                    }
+                  }
+                </div>
+              </div>
+              
+              <div class="row pt-3">
+                <div class="col-6 text-center">
+                  <button class="btn btn-secondary" (click)="limpiar()">Vaciar</button>
+                </div>
+                <div class="col-6 text-center">
+                  @if(productForm.controls['ID'].value==1)
+                  {
+                  <button class="btn btn-success" [disabled]="productForm.invalid" (click)="onSave()">Crear</button>
+                  }
+                  @else
+                  {
+                  <button class="btn btn-warning" [disabled]="productForm.invalid" (click)="onUpdate()">Actualizar</button>
+                  }
+                </div>
+              </div>
+
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="col-8">
+        <div class="card">
+          <div class="card-header bg-success">
+            <h6>Lista de Productos</h6>
+          </div>
+          <div class="card-body">
+            <div class="row">
+              <div class="col-12">
+                <table class="table table-bordered">
+                  <thead>
+                    <tr>
+                      <th>ID</th>
+                      <th>Nombre</th>
+                      <th>Tipo de Tour</th>
+                      <th>Fecha</th>
+                      <th>Accion</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    @for (item of productList; track $index) {
+                      <tr>
+                        <td>{{$index}}</td>
+                        <td>{{item.Nombre}}</td>
+                        <td>{{item.Tour}}</td>
+                        <td>{{item.Fecha}}</td>
+                        <td>
+                          <button class="btn btn-primary" (click)="onEdit(item)">Editar</button>
+                          <button class="btn btn-danger mx-2" (click)="onDelete(item.ID)">Eliminar</button>
+                        </td>
+                      </tr>
+                    }
+                  </tbody>
+                </table>
+              </div>
+            </div> 
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+  
